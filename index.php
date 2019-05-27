@@ -1,6 +1,14 @@
 <?php 
     $usuario = ["logado" => true, "nome" => "Rodrigo Toguti", "nivelAcesso" => 0];
     //$usuario = "";
+
+    $produtos = [
+        "produto1"=> ["nome" => "Curso Fullstack", "descricao" => "O curso fullstack ensina programação", "preco" => 1200, "img" =>"img/img1.jpg"],
+        "produto2"=> ["nome" => "Curso Mobile Android", "descricao" => "O curso te ensina a criar apps", "preco" => 1400, "img" => "img/img2.jpg"],
+        "produto3"=> ["nome" => "Curso Marketing Digital", "descricao" => "O curso te ensina marketing digital", "preco" => 1300, "img" => "img/img3.jpg"]
+    ];
+
+    $categorias = ["Cursos", "Tutoriais", "Artigos", "Fórum", "Códigos"];
 ?>
 
 <!DOCTYPE html>
@@ -46,42 +54,72 @@
             </ul>
         </div>
         </nav>
+            <ul class="row mt-3 justify-content-center">
+                <?php foreach($categorias as $categoria): ?>
+                    <li class="col-md-2"><?=$categoria?></li>
+                <?php endforeach; ?>
+            </ul>
     </header>
     <main class="container mt-5">
         <section class="row">
         <!-- Coluna para segurar card -->
-            <div class="col-md-4">
+        <?php foreach ($produtos as $chave => $produto):?>
+            <div class="col-md-4 mt-3">
                 <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="<?php echo $produto["img"]; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title"><?php echo $produto["nome"]; ?></h5>
+                        <p class="card-text"><?php echo $produto["descricao"]; ?></p>
+                        <h4 href="text-success"> R$<?php echo $produto["preco"]; ?></h4>
+                         <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<?php echo $chave; ?>">
+                            Comprar
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+        <?php endforeach; ?>   
         </section>
     </main>
+
+<!-- Modal -->
+    <?php foreach($produtos as $chave => $produto):?>
+    <div class="modal fade" id="<?php echo $chave; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Produto: <?php echo $produto["nome"]; ?></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" name="nomeCliente" placeholder="Nome completo">           
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="cpfcliente" placeholder="CPF">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="cartaocliente" placeholder="Cartão de crédito">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="dataValidadeCartao" placeholder="Data de validade do cartão">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="cvvCartao" maxlength="3" placeholder="CVV do cartão">
+                    </div>
+                </form>
+        </div>
+        <div class="modal-footer">
+                <div class="text-primary" data-dismiss="modal">Preço total: R$ <?php echo $produto["preco"]; ?></div>
+                <button type="button" class="btn btn-success">Finalizar Compra</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <?php endforeach; ?>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
