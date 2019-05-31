@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php include "head.php"; ?>
@@ -38,9 +37,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form method="POST" action="sucesso.php">
                     <div class="form-group">
-                        <input type="text" name="nomeCliente" placeholder="Nome completo">           
+                        <input type="text" name="nomeProduto" value="<?php echo $produto["nome"]; ?>" hidden>
+                        <input type="text" name="nomeCliente" placeholder="Nome completo"> 
                     </div>
                     <div class="form-group">
                         <input type="number" name="cpfcliente" placeholder="CPF">
@@ -54,12 +54,13 @@
                     <div class="form-group">
                         <input type="number" name="cvvCartao" maxlength="3" placeholder="CVV do cartão">
                     </div>
-                </form>
+                
         </div>
         <div class="modal-footer">
                 <div class="text-primary" data-dismiss="modal">Preço total: R$ <?php echo $produto["preco"]; ?></div>
-                <button type="button" class="btn btn-success">Finalizar Compra</button>
-        </div>
+                <button type="submit" class="btn btn-success">Finalizar Compra</button>
+                </form>
+                </div>  
         </div>
     </div>
     </div>
