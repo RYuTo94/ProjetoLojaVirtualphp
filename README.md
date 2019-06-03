@@ -1,2 +1,2 @@
 # ProjetoLojaVirtualphp
-Primeira aula de php! lol
+Primeiro projeto de php! lol

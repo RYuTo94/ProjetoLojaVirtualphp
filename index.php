@@ -43,10 +43,10 @@
                         <input type="text" name="nomeCliente" placeholder="Nome completo"> 
                     </div>
                     <div class="form-group">
-                        <input type="number" name="cpfcliente" placeholder="CPF">
+                        <input type="number" name="cpfCliente" placeholder="CPF">
                     </div>
                     <div class="form-group">
-                        <input type="number" name="cartaocliente" placeholder="Cartão de crédito">
+                        <input type="number" name="cartaoCliente" placeholder="Cartão de crédito">
                     </div>
                     <div class="form-group">
                         <input type="date" name="dataValidadeCartao" placeholder="Data de validade do cartão">

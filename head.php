@@ -1,5 +1,5 @@
 <?php
-include "funcoes.php";
+include_once "funcoes.php";
     
     $usuario = logarUsuario("Rodrigo Toguti", 1);
     //$usuario = "";
