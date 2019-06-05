@@ -4,15 +4,13 @@ include_once "funcoes.php";
     $usuario = logarUsuario("Rodrigo Toguti", 1);
     //$usuario = "";
 
-    $produtos = [
-        "produto1"=> ["nome" => "Curso Fullstack", "descricao" => "O curso fullstack ensina programação", "preco" => 1200, "img" =>"img/img1.jpg"],
-        "produto2"=> ["nome" => "Curso Mobile Android", "descricao" => "O curso te ensina a criar apps", "preco" => 1400, "img" => "img/img2.jpg"],
-        "produto3"=> ["nome" => "Curso Marketing Digital", "descricao" => "O curso te ensina marketing digital", "preco" => 1300, "img" => "img/img3.jpg"],
-        "produto4"=> ["nome" => "Curso Mobile Android", "descricao" => "O curso te ensina a criar apps", "preco" => 1400, "img" => "img/img2.jpg"]
-    ];
+    $jsonProdutos = file_get_contents('Produtos.json');
 
-    $produtos = addProduto("Curso de UX", "Curso incrível", 2000, 'img/img4.jpg', $produtos);
-    $produtos = addProduto("Curso de Data Analytics", "Curso incrível", 3000, 'img/img5.jpg', $produtos);
+    $produtos = json_decode($jsonProdutos, true);
+
+    $produtos = $produtos['Produtos'];
+
+    //addProduto("Curso UX", "Curso incrível de UX", 3000, "img/img4.jpg");
 
     $categorias = ["Cursos", "Tutoriais", "Artigos", "Fórum", "Códigos"];
 ?>
