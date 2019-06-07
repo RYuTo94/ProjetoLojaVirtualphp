@@ -10,8 +10,6 @@ include_once "funcoes.php";
 
     $produtos = $produtos['Produtos'];
 
-    //addProduto("Curso UX", "Curso incrível de UX", 3000, "img/img4.jpg");
-
     $categorias = ["Cursos", "Tutoriais", "Artigos", "Fórum", "Códigos"];
 ?>
 
