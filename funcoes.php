@@ -40,3 +40,17 @@
     function validarCVV($cvv){
         return strlen($cvv) == 3;
     }
+
+    function addUsuario($nomeUsuario, $emailUsuario, $senhaUsuario, $nivelDeAcesso){
+        $jsonUsuarios = file_exists("Usuarios.json")?file_get_contents('Usuarios.json'):"";
+        $usuarios = json_decode($jsonUsuarios, true);
+        $itensUsuarios = is_array($usuarios['usuarios'])?count($usuarios['usuarios']):0;
+        $chave = $itensUsuarios + 1;
+        $novoUsuario = ["id" => "usuario$chave", 'nome' => $nomeUsuario, 'email' => $emailUsuario, 'senha' => $senhaUsuario, 'nivelDeAcesso' => $nivelDeAcesso];
+        
+        $usuarios["usuarios"][] = $novoUsuario;
+
+        $jsonUsuarios= json_encode($usuarios);
+
+        return file_put_contents('Usuarios.json', $jsonUsuarios);;
+    }

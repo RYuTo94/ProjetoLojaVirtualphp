@@ -4,7 +4,7 @@
 <body>
 <?php include_once "header.php"; ?>
 <main class="container">
-    <section class="row">
+    <section class="row justify-content-center">
         <div class="col-md-6">
             <form action="salvarProduto.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
