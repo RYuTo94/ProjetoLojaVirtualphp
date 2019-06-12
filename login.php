@@ -8,18 +8,18 @@
         <div class="col-md-6">
             <form action="logarUsuario.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="emailUsuario">Email do Usuário</label>
+                    <label for="emailUsuario">Email:</label>
                     <input type="email" class="form-control" id="emailUsuario" placeholder="email@example.com" name="emailUsuario">
                 </div>
                 <div class="form-group">
-                    <label for="senhaUsuario">Senha</label>
+                    <label for="senhaUsuario">Senha:</label>
                     <input type="password" class ="form-control" id="senhaUsuario" placeholder="Senha" name="senhaUsuario">
                 </div>
                 <div class="form-inline justify-content-end">
                     <div class="mr-2">
-                    <button class="btn btn-success"type="submit">Login</button>
-                    </div>
                     <a class="btn btn-primary" href="cadastroUsuario.php">Cadastre-se</a>
+                    </div>
+                    <button class="btn btn-success"type="submit">Login</button>
                 </div>
                     
         </div>

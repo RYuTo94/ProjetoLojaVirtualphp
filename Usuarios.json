@@ -1,1 +1,11 @@
-{"usuarios":[{"id":"usuario1","nome":"Rodrigo","email":"rodrigo@email.com","senha":"$2y$10$K7oNvM2\/rPWdkKuwMeRuOudLPQKhEy.MwHdNGMz13IJDqaPlvaNBa","nivelDeAcesso":"0"},{"id":"usuario2","nome":"Rodrigo","email":"rodrigo@email.com","senha":"$2y$10$vJJvtoYoG4giKGSWEL69SOGD2GkVUIAhq9APVuENkCc6pe8A3XwcC","nivelDeAcesso":"0"},{"id":"usuario3","nome":"Rodrigo","email":"rodrigo@email.com","senha":"$2y$10$wDgQNmLf3a3wDvrJebnB4OlhJyrFg2rJh4jZnLWv067B3Z2ubuOla","nivelDeAcesso":"0"}]}
+{
+    "usuarios": [
+        {
+            "id": "usuario1",
+            "nome": "Rodrigo",
+            "email": "rodrigo@email.com",
+            "senha": "$2y$10$K7oNvM2/rPWdkKuwMeRuOudLPQKhEy.MwHdNGMz13IJDqaPlvaNBa",
+            "nivelDeAcesso": "0"
+        }
+    ]
+}

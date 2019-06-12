@@ -1,13 +1,14 @@
 <?php
-    function logarUsuario($nome ,$nivelDeAcesso){
-        $usuario = ["logado"=> true, "nome"=> $nome, "nivelAcesso" => $nivelDeAcesso];
-        return $usuario;
+    session_start();
+    function logarUsuario($nome ,$nivelAcesso){
+        $usuario = ["logado"=> true, "nome"=> $nome, "nivelAcesso" => $nivelAcesso];
+        $_SESSION['usuario'] = $usuario;
     }
 
     function addProduto($nome, $descricao, $preco, $img){
         $jsonProdutos = file_get_contents('Produtos.json');
         $produtos = json_decode($jsonProdutos, true);
-        // $produtos = $produtos['Produtos'];
+        //$produtos = $produtos['Produtos'];
 
         $chave = count($produtos['Produtos']) + 1;
         $novoProduto = ["id" => "produto$chave", 'nome' => $nome, 'descricao' => $descricao, 'preco' => $preco, 'img' => $img];
@@ -41,12 +42,12 @@
         return strlen($cvv) == 3;
     }
 
-    function addUsuario($nomeUsuario, $emailUsuario, $senhaUsuario, $nivelDeAcesso){
+    function addUsuario($nomeUsuario, $emailUsuario, $senhaUsuario, $nivelAcesso){
         $jsonUsuarios = file_exists("Usuarios.json")?file_get_contents('Usuarios.json'):"";
         $usuarios = json_decode($jsonUsuarios, true);
         $itensUsuarios = is_array($usuarios['usuarios'])?count($usuarios['usuarios']):0;
         $chave = $itensUsuarios + 1;
-        $novoUsuario = ["id" => "usuario$chave", 'nome' => $nomeUsuario, 'email' => $emailUsuario, 'senha' => $senhaUsuario, 'nivelDeAcesso' => $nivelDeAcesso];
+        $novoUsuario = ["id" => "usuario$chave", 'nome' => $nomeUsuario, 'email' => $emailUsuario, 'senha' => $senhaUsuario, 'nivelAcesso' => $nivelAcesso];
         
         $usuarios["usuarios"][] = $novoUsuario;
 
