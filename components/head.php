@@ -3,7 +3,7 @@ include_once "funcoes.php";
     
     $usuario = isset($_SESSION['usuario'])?$_SESSION['usuario']:"";
 
-    $jsonProdutos = file_get_contents('Produtos.json');
+    $jsonProdutos = file_get_contents('json/Produtos.json');
 
     $produtos = json_decode($jsonProdutos, true);
 

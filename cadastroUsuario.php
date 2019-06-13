@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include_once "head.php"; ?>
+<?php include_once "components/head.php"; ?>
 <body>
-<?php include_once "header.php"; ?>
+<?php include_once "components/header.php"; ?>
 <main class="container">
     <section class="row justify-content-center">
         <div class="col-md-6">
             <form action="salvarUsuario.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="nomeUsuario">Nome do Usuário</label>
+                    <label for="nomeUsuario">Nome</label>
                     <input type="text" class="form-control" id="nomeUsuario" placeholder="Nome do Usuário" name="nomeUsuario">
                 </div>
                 <div class="form-group">

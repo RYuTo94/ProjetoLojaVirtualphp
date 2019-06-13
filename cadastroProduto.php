@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include_once "head.php"; ?>
+<?php include_once "components/head.php"; ?>
 <body>
-<?php include_once "header.php"; ?>
+<?php include_once "components/header.php"; ?>
 <main class="container">
     <section class="row justify-content-center">
         <div class="col-md-6">

@@ -43,7 +43,7 @@
     }
 
     function addUsuario($nomeUsuario, $emailUsuario, $senhaUsuario, $nivelAcesso){
-        $jsonUsuarios = file_exists("Usuarios.json")?file_get_contents('Usuarios.json'):"";
+        $jsonUsuarios = file_exists("json/Usuarios.json")?file_get_contents('json/Usuarios.json'):"";
         $usuarios = json_decode($jsonUsuarios, true);
         $itensUsuarios = is_array($usuarios['usuarios'])?count($usuarios['usuarios']):0;
         $chave = $itensUsuarios + 1;

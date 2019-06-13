@@ -1,6 +1,6 @@
 <?php
 
-include_once "funcoes.php";
+include_once "components/funcoes.php";
 
 $contadorInputVazio = 0;
 foreach ($_POST as $item) {
