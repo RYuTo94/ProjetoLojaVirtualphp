@@ -14,7 +14,7 @@ if($contadorInputVazio == $itensPost){
 exit;
 }
 
-$usuarios = file_exists("Usuarios.json")?file_get_contents('Usuarios.json'):"";
+$usuarios = file_exists("json/Usuarios.json")?file_get_contents('json/Usuarios.json'):"";
 $usuarios = json_decode($usuarios,true);
 
 $email = $_POST['emailUsuario'];

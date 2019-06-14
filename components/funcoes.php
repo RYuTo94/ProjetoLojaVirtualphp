@@ -6,7 +6,7 @@
     }
 
     function addProduto($nome, $descricao, $preco, $img){
-        $jsonProdutos = file_get_contents('Produtos.json');
+        $jsonProdutos = file_get_contents('json/Produtos.json');
         $produtos = json_decode($jsonProdutos, true);
         //$produtos = $produtos['Produtos'];
 
@@ -17,7 +17,7 @@
 
         $jsonProdutos= json_encode($produtos);
 
-        file_put_contents('Produtos.json', $jsonProdutos);
+        file_put_contents('json/Produtos.json', $jsonProdutos);
 
         return true;
     }

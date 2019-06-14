@@ -1,7 +1,7 @@
 <header class="bg-light">
 <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Cursos</a>
+        <a class="navbar-brand" href="index.php">Cursos</a>
         <?php if(isset($usuario) && $usuario !="" && $usuario['logado']): ?>
             <a class="nav-link" href="#">Olá <?php echo $usuario['nome']; ?></a>
         <?php else: ?> <!-- Else do if logado existente -->

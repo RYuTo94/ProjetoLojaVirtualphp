@@ -17,22 +17,15 @@
         {
             "id": "produto3",
             "nome": "Curso Marketing Digital",
-            "descricao": "O curso te ensina marketing digital",
+            "descricao": "O curso incrível de marketing digital",
             "preco": 1300,
             "img": "img/img3.jpg"
         },
         {
             "id": "produto4",
-            "nome": "Curso Mobile Android",
-            "descricao": "O curso te ensina a criar apps",
-            "preco": 1400,
-            "img": "img/img2.jpg"
-        },
-        {
-            "id": "produto5",
-            "nome": "Curso UX",
+            "nome": "Curso de UX",
             "descricao": "Curso incrível de UX",
-            "preco": 3000,
+            "preco": "2000",
             "img": "img/img4.jpg"
         }
     ]
